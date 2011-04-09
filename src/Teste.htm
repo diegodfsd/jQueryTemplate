@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="template.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $.template.add('1', '<strong>#{nome}</strong>');
+            $.template.add('2', '<a href=\"http://www.2dsolucoes.net\" target=\"_blank\">#{link}</a>');
+            $.template.add('3', '<br />');
+            $.template.add('4', '<p><strong>#{nome.ultimo}</strong>, #{nome.primeiro}</p>');
+
+
+            $("#conteudo").append($.template.render('1', { nome: 'Diego Dias' }));
+            $("#conteudo").append($.template.render('3'));
+            $("#conteudo").append($.template.render('2', { link: '2dsoluções' }));
+            $("#conteudo").append($.template.render('4', { nome: { primeiro: 'Diego', ultimo: 'Dias'} }));
+        });
+    </script>
+    <title></title>
+</head>
+<body>
+    
+    <div id="conteudo">&nbsp;</div>
+
+</body>
+</html>
